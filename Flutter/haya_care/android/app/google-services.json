@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600652987524",
+    "project_id": "haya-care",
+    "storage_bucket": "haya-care.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600652987524:android:5beef66432588f052ad6d1",
+        "android_client_info": {
+          "package_name": "com.example.haya_care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgGFny8yPrR_8q965SKOggfhWv0L9XfY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
