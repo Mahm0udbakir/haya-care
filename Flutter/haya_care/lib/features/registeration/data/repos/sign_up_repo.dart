@@ -1,8 +1,8 @@
 import 'package:haya_care/core/networking/api_result.dart';
 import 'package:haya_care/core/networking/api_service.dart';
 import 'package:haya_care/core/networking/api_error_handler.dart';
-import 'package:haya_care/features/sign_up/data/models/signup_response.dart';
-import 'package:haya_care/features/sign_up/data/models/signup_request_body.dart';
+import 'package:haya_care/features/registeration/data/models/signup_response.dart';
+import 'package:haya_care/features/registeration/data/models/signup_request_body.dart';
 
 
 

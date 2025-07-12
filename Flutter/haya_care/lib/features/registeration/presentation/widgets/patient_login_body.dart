@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:haya_care/core/routing/routes.dart';
 import 'package:haya_care/core/theming/colors.dart';
 import 'package:haya_care/core/theming/styles.dart';
 import 'package:haya_care/core/helpers/spacing.dart';
 import 'package:haya_care/core/widgets/custom_button.dart';
 import 'package:haya_care/core/widgets/app_text_form_field.dart';
 import 'package:haya_care/core/widgets/or_continue_with_google.dart';
-import 'package:haya_care/features/login/presentation/widgets/do_not_have_account_text.dart';
+import 'package:haya_care/features/registeration/presentation/widgets/do_not_have_account_text.dart';
 
-class PatientLoginScreen extends StatefulWidget {
-  const PatientLoginScreen({super.key});
+class PatientLoginBody extends StatefulWidget {
+  const PatientLoginBody({super.key, required this.tabController});
+  final TabController tabController;
 
   @override
-  State<PatientLoginScreen> createState() => _PatientLoginScreenState();
+  State<PatientLoginBody> createState() => _PatientLoginBodyState();
 }
 
-class _PatientLoginScreenState extends State<PatientLoginScreen>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+class _PatientLoginBodyState extends State<PatientLoginBody> {
   bool _obscurePassword = true;
+  bool _rememberMe = false;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -36,18 +36,6 @@ class _PatientLoginScreenState extends State<PatientLoginScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TabBar(
-                  isScrollable: true,
-                  tabAlignment: TabAlignment.start,
-                  controller: _tabController,
-                  indicatorColor: ColorsManager.primaryColor,
-
-                  unselectedLabelColor: ColorsManager.darkGrey,
-                  tabs: const [Tab(text: "Login"), Tab(text: "Sign Up")],
-                  labelStyle: TextStyles.font14BlackBold.copyWith(
-                    fontFamily: "publicSans",
-                  ),
-                ),
                 verticalSpace(24),
                 Text(
                   "Email",
@@ -91,7 +79,20 @@ class _PatientLoginScreenState extends State<PatientLoginScreen>
 
                 Row(
                   children: [
-                    Checkbox(value: false, onChanged: (val) {}),
+                    Checkbox(
+                      checkColor: ColorsManager.primaryColor,
+                      side: const BorderSide(color: ColorsManager.darkGrey),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      activeColor: ColorsManager.white,
+                      value: _rememberMe,
+                      onChanged: (value) {
+                        setState(() {
+                          _rememberMe = value ?? false;
+                        });
+                      },
+                    ),
                     Text("Remember me", style: TextStyles.font16BlackMedium),
                   ],
                 ),
@@ -115,7 +116,10 @@ class _PatientLoginScreenState extends State<PatientLoginScreen>
                 const OrContinueWithGoogle(),
 
                 verticalSpace(20),
-                DontHaveAccountText(),
+                DontHaveAccountText(tabController: widget.tabController,),
+
+                // Uncomment the following line if you want to add an "Already have an account" text
+                // AlreadyHaveAnAccountText(route: Routes.patientLoginScreen),
               ],
             ),
           ),

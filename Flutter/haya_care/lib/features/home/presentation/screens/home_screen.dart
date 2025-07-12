@@ -3,7 +3,7 @@ import 'package:haya_care/core/routing/routes.dart';
 import 'package:haya_care/core/theming/colors.dart';
 import 'package:haya_care/core/helpers/spacing.dart';
 import 'package:haya_care/core/helpers/extensions.dart';
-import 'package:haya_care/features/home/presentation/screens/widgets/option_card.dart';
+import 'package:haya_care/features/home/presentation/widgets/option_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
 
               OptionCard(
                 onTap: () {
-                  context.pushReplacementNamed(Routes.doctorLoginScreen);
+                  context.pushReplacementNamed(Routes.doctorRegisterScreen);
                 },
                 title: 'Doctor',
                 description:
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 20),
               OptionCard(
                 onTap: () {
-                  context.pushReplacementNamed(Routes.patientLoginScreen);
+                  context.pushReplacementNamed(Routes.patientRegisterScreen);
                 },
                 title: 'Patient',
                 description:

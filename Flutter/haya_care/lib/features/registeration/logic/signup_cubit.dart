@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:haya_care/core/networking/api_result.dart';
-import 'package:haya_care/features/sign_up/logic/signup_state.dart';
-import 'package:haya_care/features/sign_up/data/repos/sign_up_repo.dart';
-import 'package:haya_care/features/sign_up/data/models/signup_request_body.dart';
+import 'package:haya_care/features/registeration/logic/signup_state.dart';
+import 'package:haya_care/features/registeration/data/repos/sign_up_repo.dart';
+import 'package:haya_care/features/registeration/data/models/signup_request_body.dart';
 
 
 

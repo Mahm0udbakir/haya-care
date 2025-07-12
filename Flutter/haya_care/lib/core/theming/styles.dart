@@ -19,7 +19,7 @@ class TextStyles {
   );
 
   static TextStyle font12BlackSemiBold = TextStyle(
-    fontSize: 16.sp,
+    fontSize: 12.sp,
     fontWeight: FontWeightHelper.fromString("semiBold"),
     color: ColorsManager.black,
   );

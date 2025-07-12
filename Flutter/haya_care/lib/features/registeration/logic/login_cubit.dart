@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:haya_care/core/networking/api_result.dart';
-import 'package:haya_care/features/login/logic/login_state.dart';
-import 'package:haya_care/features/login/data/repos/login_repo.dart';
-import 'package:haya_care/features/login/data/models/login_request_body.dart';
+import 'package:haya_care/features/registeration/logic/login_state.dart';
+import 'package:haya_care/features/registeration/data/repos/login_repo.dart';
+import 'package:haya_care/features/registeration/data/models/login_request_body.dart';
 
 
 class LoginCubit extends Cubit<LoginState> {
