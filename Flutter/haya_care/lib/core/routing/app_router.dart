@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:haya_care/core/routing/routes.dart';
 import 'package:haya_care/core/di/dependency_injection.dart';
-import 'package:haya_care/features/login/logic/login_cubit.dart';
-import 'package:haya_care/features/sign_up/logic/signup_cubit.dart';
+import 'package:haya_care/features/registeration/logic/login_cubit.dart';
+import 'package:haya_care/features/registeration/logic/signup_cubit.dart';
 import 'package:haya_care/features/home/presentation/screens/home_screen.dart';
-import 'package:haya_care/features/login/presentation/screens/login_screen.dart';
-import 'package:haya_care/features/sign_up/presentation/screens/signup_screen.dart';
+import 'package:haya_care/features/registeration/presentation/screens/doctor_register_screen.dart';
+import 'package:haya_care/features/registeration/presentation/screens/patient_register_screen.dart';
 
 
 class AppRouter {
@@ -15,25 +15,25 @@ class AppRouter {
     final arguments = settings.arguments;
 
     switch (settings.name) {
-    
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
-      case Routes.loginScreen:
+      case Routes.patientRegisterScreen:
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
                 create: (context) => getIt<LoginCubit>(),
-                child: LoginScreen(),
+                child: PatientRegisterScreen(),
               ),
         );
-      case Routes.signupScreen:
+      case Routes.doctorRegisterScreen:
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
                 create: (context) => getIt<SignupCubit>(),
-                child: SignupScreen(),
+                child: DoctorRegisterScreen(),
               ),
         );
+      
       default:
         return MaterialPageRoute(
           builder:
