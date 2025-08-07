@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:haya_care/core/theme/app_color.dart';
 import 'package:haya_care/core/theme/app_style.dart';
 
-class QuickActionCard extends StatelessWidget {
+class CustomQuickActionCard extends StatelessWidget {
   final String title;
   final IconData icon;
   final VoidCallback onTap;
 
-  const QuickActionCard({
+  const CustomQuickActionCard({
     super.key,
     required this.title,
     required this.icon,

@@ -5,29 +5,39 @@ import 'package:haya_care/core/theme/app_style.dart';
 import 'package:haya_care/core/widget/custom_elevated_button.dart';
 import 'package:haya_care/core/widget/custom_outlined_button.dart';
 
-class AppointmentCardWidget extends StatelessWidget {
+class CustomAppointmentCard extends StatelessWidget {
   final String doctorName;
   final String specialty;
   final String dateTime;
   final String location;
+  final String textBotton;
   final String? doctorImageUrl;
-  final VoidCallback onReschedule;
-  final VoidCallback onCancel;
+  final String? completText;
+  final String? missedText;
+  final bool isAssetImage;
+  final bool showCancelButton;
+  final VoidCallback ontap;
+  final VoidCallback? onCancel;
 
-  const AppointmentCardWidget({
+  const CustomAppointmentCard({
     super.key,
     required this.doctorName,
     required this.specialty,
     required this.dateTime,
     required this.location,
     this.doctorImageUrl,
-    required this.onReschedule,
-    required this.onCancel,
+    this.isAssetImage = true,
+    this.showCancelButton = true,
+    required this.ontap,
+    this.onCancel,
+    this.completText,
+    this.missedText,
+    required this.textBotton,
   });
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
-      // ده اللي هيخلي الصورة تاخد ارتفاع الكارد
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -46,20 +56,55 @@ class AppointmentCardWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: Image.asset(
-                AppImage.docdorImage,
-                fit: BoxFit.fill,
-                width: 86,
-              ),
+              child: doctorImageUrl != null
+                  ? isAssetImage
+                      ? Image.asset(
+                          doctorImageUrl!,
+                          fit: BoxFit.fill,
+                          width: 86,
+                        )
+                      : Image.network(
+                          doctorImageUrl!,
+                          fit: BoxFit.fill,
+                          width: 86,
+                        )
+                  : Image.asset(
+                      AppImage.docdorImage,
+                      fit: BoxFit.fill,
+                      width: 86,
+                    ),
             ),
             const SizedBox(width: 8),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  if (missedText != null) ...[
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        textAlign: TextAlign.start,
+                        missedText!,
+                        style: AppStyles.sectionHeaderStyle
+                            .copyWith(fontSize: 14, color: Colors.red),
+                      ),
+                    ),
+                  ],
+                  if (completText != null) ...[
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        textAlign: TextAlign.start,
+                        completText!,
+                        style: AppStyles.sectionHeaderStyle.copyWith(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ],
                   Text(
                     doctorName,
-                    style: AppStyles.doctorNameStyle,
+                    style: AppStyles.sectionHeaderStyle,
                   ),
                   const SizedBox(height: 8),
                   Text(
@@ -100,24 +145,26 @@ class AppointmentCardWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: CustomElevatedButton(
-                          text: 'Reschedule',
-                          onPressed: onReschedule,
+                          text: textBotton,
+                          onPressed: ontap,
                           textStyle: AppStyles.buttonTextStyle,
                           borderRadius: 8,
                           heigth: 40,
                         ),
                       ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: CustomOutlinedButton(
-                          text: 'Cancel',
-                          onPressed: onCancel,
-                          textStyle: AppStyles.cancelButtonTextStyle,
-                          borderColor: AppColors.cancelColor,
-                          borderRadius: 8,
-                          height: 40,
+                      if (showCancelButton && onCancel != null) ...[
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: CustomOutlinedButton(
+                            text: 'Cancel',
+                            onPressed: onCancel!,
+                            textStyle: AppStyles.cancelButtonTextStyle,
+                            borderColor: AppColors.cancelColor,
+                            borderRadius: 8,
+                            height: 40,
+                          ),
                         ),
-                      ),
+                      ]
                     ],
                   ),
                 ],

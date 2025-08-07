@@ -26,10 +26,8 @@ class AppRouter {
       case AppRoutes.profileRoute:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case AppRoutes.appointmentDetailsRoute:
-        final appointmentData = settings.arguments as AppointmentDetailsData;
         return MaterialPageRoute(
-          builder: (_) =>
-              AppointmentDetailsScreen(appointmentData: appointmentData),
+          builder: (_) => AppointmentDetailsScreen(),
         );
       case AppRoutes.bookAppointmentRoute:
         final doctorData = settings.arguments as DoctorBookingData;

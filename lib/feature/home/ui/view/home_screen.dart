@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:haya_care/core/theme/app_color.dart';
 import 'package:haya_care/core/theme/app_style.dart';
 
-import 'package:haya_care/feature/home/ui/view/widgets/appointment_card_widget.dart';
+import 'package:haya_care/core/widget/custom_appointment_card.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/profile_card_widget.dart';
-import 'package:haya_care/feature/home/ui/view/widgets/quick_actions_widget.dart';
+import 'package:haya_care/feature/home/ui/view/widgets/custom_quick_action_card.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/welcome_header_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,17 +41,17 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              AppointmentCardWidget(
+              CustomAppointmentCard(
                 doctorName: 'Dr. Ahmed Mohammed',
                 specialty: 'Cardiologist',
                 dateTime: 'Jan 28, 2025 • 2:30 PM',
                 location: 'City Hospital',
-                onReschedule: () {
+                ontap: () {
                   // TODO: Handle reschedule
                 },
                 onCancel: () {
                   // TODO: Handle cancel
-                },
+                }, textBotton: 'Reschedule',
               ),
 
               const SizedBox(height: 32),
@@ -62,18 +62,18 @@ class HomeScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 16),
-             
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  QuickActionCard(
+                  CustomQuickActionCard(
                     title: 'Book\nAppointment',
                     icon: Icons.calendar_today,
                     onTap: () {
                       // Navigator.pushNamed(context, AppRoutes.bookAppointment);
                     },
                   ),
-                  QuickActionCard(
+                  CustomQuickActionCard(
                     title: 'View Medical\nProfile',
                     icon: Icons.person,
                     onTap: () {
@@ -85,14 +85,14 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  QuickActionCard(
+                  CustomQuickActionCard(
                     title: 'Reminders',
                     icon: Icons.notifications,
                     onTap: () {
                       // Navigator.pushNamed(context, AppRoutes.reminders);
                     },
                   ),
-                  QuickActionCard(
+                  CustomQuickActionCard(
                     title: 'Notifications',
                     icon: Icons.notifications_active,
                     onTap: () {
