@@ -3,4 +3,7 @@ class AppRoutes {
   static const homeRoute = '/home';
   static const newHomeRoute = '/new-home';
   static const navigationBarRoute = '/';
+  static const profileRoute = '/profile';
+  static const appointmentDetailsRoute = '/appointment-details';
+  static const bookAppointmentRoute = '/book-appointment';
 }

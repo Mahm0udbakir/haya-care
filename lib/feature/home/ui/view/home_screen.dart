@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,17 +29,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Profile Card
-              ProfileCardWidget(
-                userName: 'Rowan Ahmed',
-                age: 32,
-                notificationCount: 3,
-                onViewProfile: () {
-                  // TODO: Navigate to profile
-                },
-                onNotificationTap: () {
-                  // TODO: Show notifications
-                },
-              ),
+              ProfileCardWidget(),
 
               const SizedBox(height: 32),
 
@@ -66,48 +56,51 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 32),
 
-              // Quick Actions Section
               Text(
                 'Quick Actions',
                 style: AppStyles.sectionHeaderStyle,
               ),
 
               const SizedBox(height: 16),
-
-              QuickActionsWidget(
-                actions: [
-                  QuickActionItem(
+             
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  QuickActionCard(
                     title: 'Book\nAppointment',
                     icon: Icons.calendar_today,
                     onTap: () {
-                      // TODO: Navigate to book appointment
+                      // Navigator.pushNamed(context, AppRoutes.bookAppointment);
                     },
                   ),
-                  QuickActionItem(
+                  QuickActionCard(
                     title: 'View Medical\nProfile',
                     icon: Icons.person,
                     onTap: () {
-                      // TODO: Navigate to medical profile
-                    },
-                  ),
-                  QuickActionItem(
-                    title: 'Reminders',
-                    icon: Icons.notifications,
-                    onTap: () {
-                      // TODO: Navigate to reminders
-                    },
-                  ),
-                  QuickActionItem(
-                    title: 'Notifications',
-                    icon: Icons.notifications_active,
-                    onTap: () {
-                      // TODO: Navigate to notifications
+                      // Navigator.pushNamed(context, AppRoutes.medicalProfile);
                     },
                   ),
                 ],
               ),
-
-              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  QuickActionCard(
+                    title: 'Reminders',
+                    icon: Icons.notifications,
+                    onTap: () {
+                      // Navigator.pushNamed(context, AppRoutes.reminders);
+                    },
+                  ),
+                  QuickActionCard(
+                    title: 'Notifications',
+                    icon: Icons.notifications_active,
+                    onTap: () {
+                      // Navigator.pushNamed(context, AppRoutes.notifications);
+                    },
+                  ),
+                ],
+              ),
             ],
           ),
         ),
