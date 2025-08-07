@@ -5,29 +5,30 @@ class CustomListTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+  final double padding;
+  final double radius;
 
   const CustomListTile({
     super.key,
     required this.icon,
     required this.title,
     required this.subtitle,
+    this.padding = 24,
+    this.radius = 16,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.blackColor.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(radius),
+        border: Border.all(
+          color: AppColors.grayColor,
+          width: 1,
+        ),
       ),
       child: ListTile(
         minTileHeight: 0,

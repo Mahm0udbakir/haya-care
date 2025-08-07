@@ -53,7 +53,7 @@ class CustomElevatedButton extends StatelessWidget {
           label: FittedBox(
             child: Text(
               text,
-              style: textStyle ?? AppStyles.textStyle18black,
+              style: textStyle ?? AppStyles.buttonTextStyle,
             ),
           ),
         ),

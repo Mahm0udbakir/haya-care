@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:haya_care/core/routes/app_routes.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 import 'package:haya_care/core/widget/custom_appointment_card.dart';
-import 'book_appointment_screen.dart';
 
 class PatientsScreen extends StatefulWidget {
   const PatientsScreen({super.key});

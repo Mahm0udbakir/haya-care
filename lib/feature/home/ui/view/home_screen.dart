@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:haya_care/core/constant/app_image.dart';
+import 'package:haya_care/core/routes/app_routes.dart';
 import 'package:haya_care/core/theme/app_color.dart';
 import 'package:haya_care/core/theme/app_style.dart';
 
 import 'package:haya_care/core/widget/custom_appointment_card.dart';
+import 'package:haya_care/feature/home/ui/view/book_appointment_details_screen.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/profile_card_widget.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/custom_quick_action_card.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/welcome_header_widget.dart';
@@ -51,7 +54,8 @@ class HomeScreen extends StatelessWidget {
                 },
                 onCancel: () {
                   // TODO: Handle cancel
-                }, textBotton: 'Reschedule',
+                },
+                textBotton: 'Reschedule',
               ),
 
               const SizedBox(height: 32),
@@ -70,7 +74,10 @@ class HomeScreen extends StatelessWidget {
                     title: 'Book\nAppointment',
                     icon: Icons.calendar_today,
                     onTap: () {
-                      // Navigator.pushNamed(context, AppRoutes.bookAppointment);
+                      
+                      Navigator.pushNamed(
+                          context, AppRoutes.bookAppointmentRoute,
+                          );
                     },
                   ),
                   CustomQuickActionCard(
@@ -89,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                     title: 'Reminders',
                     icon: Icons.notifications,
                     onTap: () {
-                      // Navigator.pushNamed(context, AppRoutes.reminders);
+                      Navigator.pushNamed(context, AppRoutes.remindersRoute);
                     },
                   ),
                   CustomQuickActionCard(

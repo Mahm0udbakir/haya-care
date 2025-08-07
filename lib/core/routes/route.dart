@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:haya_care/core/routes/app_routes.dart';
+import 'package:haya_care/feature/home/ui/view/book_appointment_details_screen.dart';
 import 'package:haya_care/feature/home/ui/view/home_screen.dart';
 import 'package:haya_care/feature/home/ui/view/nav_bar_screen.dart';
 import 'package:haya_care/feature/home/ui/view/profile_screen.dart';
 import 'package:haya_care/feature/home/ui/view/appointment_details_screen.dart';
 import 'package:haya_care/feature/home/ui/view/book_appointment_screen.dart';
+import 'package:haya_care/feature/home/ui/view/reminders_screen.dart';
 import 'package:haya_care/feature/home/ui/view_model/bottom_nav_bar_cubit.dart';
 
 class AppRouter {
@@ -25,14 +27,20 @@ class AppRouter {
                 ));
       case AppRoutes.profileRoute:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case AppRoutes.remindersRoute:
+        return MaterialPageRoute(builder: (_) => RemindersScreen());
       case AppRoutes.appointmentDetailsRoute:
         return MaterialPageRoute(
           builder: (_) => AppointmentDetailsScreen(),
         );
       case AppRoutes.bookAppointmentRoute:
+        return MaterialPageRoute(
+          builder: (_) => BookAppointmentScreen(),
+        );
+      case AppRoutes.bookAppointmentDetailsRoute:
         final doctorData = settings.arguments as DoctorBookingData;
         return MaterialPageRoute(
-          builder: (_) => BookAppointmentScreen(doctorData: doctorData),
+          builder: (_) => BookAppointmentDetailsScreen(doctorData: doctorData),
         );
 
       default:

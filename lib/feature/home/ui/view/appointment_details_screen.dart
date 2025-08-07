@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haya_care/core/constant/app_image.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 import 'package:haya_care/core/widget/custom_list_tile.dart';
 
 class AppointmentDetailsScreen extends StatelessWidget {
@@ -41,13 +40,10 @@ class AppointmentDetailsScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor,
                   borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.blackColor.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
+                  border: Border.all(
+                    color: AppColors.grayColor,
+                    width: 1,
+                  ),
                 ),
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
@@ -127,13 +123,10 @@ class AppointmentDetailsScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor,
                   borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.blackColor.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
+                  border: Border.all(
+                    color: AppColors.grayColor,
+                    width: 1,
+                  ),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -175,13 +168,10 @@ class AppointmentDetailsScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor,
                   borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.blackColor.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
+                  border: Border.all(
+                    color: AppColors.grayColor,
+                    width: 1,
+                  ),
                 ),
                 child: Text(
                   'Discussed recent chest pains and conducted an EKG. Results were normal, but advised to monitor symptoms and schedule a follow-up if they persist.',

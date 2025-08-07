@@ -5,5 +5,7 @@ class AppRoutes {
   static const navigationBarRoute = '/';
   static const profileRoute = '/profile';
   static const appointmentDetailsRoute = '/appointment-details';
+  static const bookAppointmentDetailsRoute = '/book-appointment-details';
   static const bookAppointmentRoute = '/book-appointment';
+  static const remindersRoute = '/remindersScreen';
 }

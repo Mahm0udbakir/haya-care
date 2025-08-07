@@ -17,10 +17,10 @@ class NavBarScreen extends StatelessWidget {
         builder: (context, state) {
           return IndexedStack(
             index: state,
-            children: const [
-              HomeScreen(),
-              AppointmentsScreen(),
-              PatientsScreen(),
+            children: [
+              const HomeScreen(),
+              const AppointmentsScreen(),
+              const PatientsScreen(),
               SettingsScreen()
             ],
           );

@@ -11,4 +11,5 @@ class AppColors {
   static const textTertiary = Color(0xff999999);
   static const notificationBadge = Color(0xff00B4D8);
   static const blackColor = Colors.black;
+  static const grayColor = Color(0xffE5E7EB);
 }
