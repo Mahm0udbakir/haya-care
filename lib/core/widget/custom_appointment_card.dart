@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haya_care/core/constant/app_image.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 import 'package:haya_care/core/widget/custom_elevated_button.dart';
 import 'package:haya_care/core/widget/custom_outlined_button.dart';
 
@@ -37,6 +36,8 @@ class CustomAppointmentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
+
     return IntrinsicHeight(
       child: Container(
         padding: const EdgeInsets.all(16),
@@ -82,8 +83,8 @@ class CustomAppointmentCard extends StatelessWidget {
                       child: Text(
                         textAlign: TextAlign.start,
                         missedText!,
-                        style: AppStyles.sectionHeaderStyle
-                            .copyWith(fontSize: 14, color: Colors.red),
+                        // style: AppStyles.sectionHeaderStyle
+                        //     .copyWith(fontSize: 14, color: Colors.red),
                       ),
                     ),
                   ],
@@ -93,20 +94,21 @@ class CustomAppointmentCard extends StatelessWidget {
                       child: Text(
                         textAlign: TextAlign.start,
                         completText!,
-                        style: AppStyles.sectionHeaderStyle.copyWith(
-                          fontSize: 14,
-                        ),
+                        // style: AppStyles.sectionHeaderStyle.copyWith(
+                        //   fontSize: 14,
+                        // ),
                       ),
                     ),
                   ],
                   Text(
                     doctorName,
-                    style: AppStyles.sectionHeaderStyle,
+                    style: theme.titleLarge!
+                        .copyWith(color: AppColors.primaryColor),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     specialty,
-                    style: AppStyles.specialtyStyle,
+                    style: theme.titleMedium,
                   ),
                   const SizedBox(height: 16),
                   Row(
@@ -116,22 +118,20 @@ class CustomAppointmentCard extends StatelessWidget {
                         size: 16,
                         color: AppColors.textSecondary,
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 2),
                       Text(
                         dateTime,
-                        style: AppStyles.appointmentDetailStyle,
+                        style: theme.bodySmall,
                       ),
-                      const SizedBox(width: 24),
                       Icon(
                         Icons.location_on_outlined,
                         size: 16,
                         color: AppColors.textSecondary,
                       ),
-                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           location,
-                          style: AppStyles.appointmentDetailStyle,
+                          style: theme.bodySmall,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -144,7 +144,6 @@ class CustomAppointmentCard extends StatelessWidget {
                         child: CustomElevatedButton(
                           text: textBotton,
                           onPressed: ontap,
-                          textStyle: AppStyles.buttonTextStyle,
                           borderRadius: 8,
                           heigth: 40,
                         ),
@@ -155,7 +154,6 @@ class CustomAppointmentCard extends StatelessWidget {
                           child: CustomOutlinedButton(
                             text: 'Cancel',
                             onPressed: onCancel!,
-                            textStyle: AppStyles.cancelButtonTextStyle,
                             borderColor: AppColors.cancelColor,
                             borderRadius: 8,
                             height: 40,

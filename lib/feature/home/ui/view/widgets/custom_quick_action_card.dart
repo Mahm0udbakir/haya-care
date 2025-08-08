@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 
 class CustomQuickActionCard extends StatelessWidget {
   final String title;
@@ -19,39 +18,37 @@ class CustomQuickActionCard extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: 70,
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
-            decoration: BoxDecoration(
-              color: AppColors.whiteColor,
-              borderRadius: BorderRadius.circular(8),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+        child: Container(
+          height: 70,
+          padding: const EdgeInsets.only(right: 8, left: 20, bottom: 8),
+          margin: EdgeInsets.only(bottom: 8),
+          decoration: BoxDecoration(
+            color: AppColors.whiteColor,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: AppColors.grayColor,
+              width: 1,
             ),
-            child: Row(
-              children: [
-                Icon(
-                  icon,
-                  size: 28,
-                  color: AppColors.primaryColor,
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  title,
-                  style: AppStyles.quickActionStyle,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
+          ),
+          child: Row(
+            children: [
+              Icon(
+                icon,
+                size: 28,
+                color: AppColors.primaryColor,
+              ),
+              const SizedBox(width: 12),
+              Text(
+                title,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontSize: 12),
+                textAlign: TextAlign.left,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
           ),
         ),
       ),

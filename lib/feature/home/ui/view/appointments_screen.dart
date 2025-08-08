@@ -29,20 +29,10 @@ class _AppointmentsScreenState extends State<AppointmentsScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        automaticallyImplyLeading: false,
         title: const Text(
           'Appointments',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
         ),
-        centerTitle: true,
         bottom: TabBar(
           controller: _tabController,
           labelColor: AppColors.primaryColor,

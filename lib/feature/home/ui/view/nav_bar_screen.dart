@@ -35,16 +35,6 @@ class NavBarScreen extends StatelessWidget {
               ),
               child: BottomNavigationBar(
                 type: BottomNavigationBarType.fixed,
-                backgroundColor: AppColors.cardColor,
-                selectedItemColor: AppColors.primaryColor,
-                unselectedItemColor: AppColors.textSecondary,
-                elevation: 0,
-                selectedFontSize: 12,
-                unselectedFontSize: 12,
-                selectedLabelStyle: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
                 currentIndex: state,
                 onTap: (value) {
                   BlocProvider.of<BottomNavCubit>(context).changeTab(value);
@@ -61,7 +51,11 @@ class NavBarScreen extends StatelessWidget {
                     label: 'Appointments',
                   ),
                   BottomNavigationBarItem(
-                    activeIcon: Icon(Icons.add_box_sharp, color: Colors.blue),
+                    activeIcon: Icon(
+                      Icons.add,
+                      color: Colors.blue,
+                      size: 30,
+                    ),
                     icon: Icon(Icons.add),
                     label: 'book',
                   ),
@@ -77,6 +71,3 @@ class NavBarScreen extends StatelessWidget {
     );
   }
 }
-
-
-

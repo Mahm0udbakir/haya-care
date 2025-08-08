@@ -1,91 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:haya_care/core/constant/app_image.dart';
-import 'package:haya_care/core/theme/app_color.dart';
 import 'package:haya_care/core/widget/custom_list_tile.dart';
+import 'package:haya_care/feature/home/ui/view/widgets/custom_prefile_card.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: const Text(
           'Profile',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Personal Information',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.textPrimary,
-                        ),
-                      ),
-                      Text(
-                        'Rowan Ahmed',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.textPrimary,
-                        ),
-                      ),
-                      Text(
-                        'Age: 34, Female',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                      fit: BoxFit.cover,
-                      AppImage.prefile2Image,
-                      width: 100,
-                      height: 100,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 41),
+              CustomProfileCard(),
+              SizedBox(height: 24),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Contact',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
+                  Text('Contact', style: theme.titleLarge),
                   SizedBox(height: 8),
                   CustomListTile(
                     padding: 12.5,
@@ -116,14 +55,7 @@ class ProfileScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Health Data',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
+                  Text('Health Data', style: theme.titleLarge),
                   SizedBox(height: 8),
                   CustomListTile(
                     padding: 12.5,
@@ -184,14 +116,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(height: 24),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(
-                  'Medical History',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                Text('Medical History', style: theme.titleLarge),
                 SizedBox(height: 8),
                 CustomListTile(
                   padding: 12.5,
@@ -227,14 +152,7 @@ class ProfileScreen extends StatelessWidget {
               ]),
               SizedBox(height: 24),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(
-                  'Prescriptions',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                Text('Prescriptions', style: theme.titleLarge),
                 SizedBox(height: 8),
                 CustomListTile(
                   padding: 12.5,
@@ -246,14 +164,7 @@ class ProfileScreen extends StatelessWidget {
               ]),
               SizedBox(height: 24),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(
-                  'Lab Results',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                Text('Lab Results', style: theme.titleLarge),
                 SizedBox(height: 8),
                 CustomListTile(
                   padding: 12.5,

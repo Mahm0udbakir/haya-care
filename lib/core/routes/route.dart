@@ -4,6 +4,7 @@ import 'package:haya_care/core/routes/app_routes.dart';
 import 'package:haya_care/feature/home/ui/view/book_appointment_details_screen.dart';
 import 'package:haya_care/feature/home/ui/view/home_screen.dart';
 import 'package:haya_care/feature/home/ui/view/nav_bar_screen.dart';
+import 'package:haya_care/feature/home/ui/view/notifications_screen.dart';
 import 'package:haya_care/feature/home/ui/view/profile_screen.dart';
 import 'package:haya_care/feature/home/ui/view/appointment_details_screen.dart';
 import 'package:haya_care/feature/home/ui/view/book_appointment_screen.dart';
@@ -42,7 +43,8 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BookAppointmentDetailsScreen(doctorData: doctorData),
         );
-
+      case AppRoutes.notificationsRoute:
+        return MaterialPageRoute(builder: (_) => NotificationsScreen());
       default:
         return null;
     }

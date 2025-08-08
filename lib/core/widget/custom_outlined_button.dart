@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 
 /// Generic outlined button widget
 class CustomOutlinedButton extends StatelessWidget {
@@ -33,6 +32,8 @@ class CustomOutlinedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Directionality(
       textDirection: textDirection ?? TextDirection.ltr,
       child: SizedBox(
@@ -57,7 +58,9 @@ class CustomOutlinedButton extends StatelessWidget {
                 child: FittedBox(
                   child: Text(
                     text,
-                    style: textStyle ?? AppStyles.textStyle18black,
+                    style: textStyle ??
+                        textTheme.titleSmall!
+                            .copyWith(color: AppColors.cancelColor),
                   ),
                 ),
               ),

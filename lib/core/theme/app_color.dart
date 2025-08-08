@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const primaryColor = Color(0xff00B4D8);
-  static const whiteColor = Color(0xffF8F9FA);
+  static const whiteColor = Color(0xffFFFFFF);
   static const backgroundColor = Color(0xffF5F5F5);
   static const cardColor = Colors.white;
   static const cancelColor = Color(0xffE11D48);
@@ -12,4 +12,5 @@ class AppColors {
   static const notificationBadge = Color(0xff00B4D8);
   static const blackColor = Colors.black;
   static const grayColor = Color(0xffE5E7EB);
+  static const grayColor2 = Color(0xff5C5C5C);
 }

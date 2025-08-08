@@ -39,14 +39,7 @@ class CustomSwitchTile extends StatelessWidget {
                 ),
               )
             : null,
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            color: AppColors.textPrimary,
-          ),
-        ),
+        title: Text(title, style: Theme.of(context).textTheme.titleLarge),
         trailing: ValueListenableBuilder<bool>(
           valueListenable: switchValue,
           builder: (context, value, _) {

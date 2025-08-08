@@ -10,23 +10,10 @@ class BookAppointmentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: const Text(
           'Book Appointment',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
         ),
-        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),

@@ -19,6 +19,7 @@ class CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(padding),
@@ -44,20 +45,8 @@ class CustomListTile extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 14,
-            color: AppColors.textPrimary,
-          ),
-        ),
-        subtitle: Text(
-          subtitle,
-          style: const TextStyle(
-            fontSize: 12,
-            color: AppColors.textSecondary,
-          ),
-        ),
+        title: Text(title, style: theme.titleLarge),
+        subtitle: Text(subtitle, style: theme.titleMedium),
       ),
     );
   }

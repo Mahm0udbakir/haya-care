@@ -11,20 +11,10 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        automaticallyImplyLeading: false,
         title: const Text(
           'Settings',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
         ),
-        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -53,14 +43,8 @@ class SettingsScreen extends StatelessWidget {
                     size: 20,
                   ),
                 ),
-                title: const Text(
-                  'My Profile',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                title: Text('My Profile',
+                    style: Theme.of(context).textTheme.titleLarge),
                 trailing: const Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.textTertiary,
@@ -138,13 +122,9 @@ class SettingsScreen extends StatelessWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
+              Text(
                 'Are you sure you want to logout?',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.textPrimary,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),

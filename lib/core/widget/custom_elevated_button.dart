@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 
 /// Generic button widget
 class CustomElevatedButton extends StatelessWidget {
@@ -32,6 +31,7 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Directionality(
       textDirection: textDirection ?? TextDirection.ltr,
       child: SizedBox(
@@ -53,7 +53,7 @@ class CustomElevatedButton extends StatelessWidget {
           label: FittedBox(
             child: Text(
               text,
-              style: textStyle ?? AppStyles.buttonTextStyle,
+              style: textStyle ?? textTheme.titleSmall,
             ),
           ),
         ),

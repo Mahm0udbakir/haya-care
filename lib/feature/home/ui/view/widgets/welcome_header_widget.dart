@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 
 class WelcomeHeaderWidget extends StatelessWidget {
   final String userName;
@@ -13,17 +12,18 @@ class WelcomeHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final testStyle = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           'Welcome, $userName',
-          style: AppStyles.welcomeStyle,
+          style: testStyle.titleLarge,
         ),
         const SizedBox(height: 4),
         Text(
           date,
-          style: AppStyles.dateStyle,
+          style: testStyle.bodyMedium,
         ),
       ],
     );

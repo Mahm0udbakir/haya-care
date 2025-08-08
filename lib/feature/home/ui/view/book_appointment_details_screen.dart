@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 import 'package:haya_care/core/widget/custom_elevated_button.dart';
 
 class BookAppointmentDetailsScreen extends StatefulWidget {
@@ -12,10 +11,12 @@ class BookAppointmentDetailsScreen extends StatefulWidget {
   });
 
   @override
-  State<BookAppointmentDetailsScreen> createState() => _BookAppointmentDetailsScreenState();
+  State<BookAppointmentDetailsScreen> createState() =>
+      _BookAppointmentDetailsScreenState();
 }
 
-class _BookAppointmentDetailsScreenState extends State<BookAppointmentDetailsScreen> {
+class _BookAppointmentDetailsScreenState
+    extends State<BookAppointmentDetailsScreen> {
   DateTime selectedDate = DateTime.now();
   String? selectedTime;
   PageController pageController = PageController();
@@ -35,23 +36,11 @@ class _BookAppointmentDetailsScreenState extends State<BookAppointmentDetailsScr
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.close, color: AppColors.textPrimary),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: const Text(
           'Book Appointment',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -158,7 +147,7 @@ class _BookAppointmentDetailsScreenState extends State<BookAppointmentDetailsScr
               child: CustomElevatedButton(
                 text: 'Confirm Appointment',
                 onPressed: selectedTime != null ? _confirmAppointment : () {},
-                textStyle: AppStyles.buttonTextStyle,
+                // textStyle: AppStyles.buttonTextStyle,
                 borderRadius: 12,
                 heigth: 50,
               ),

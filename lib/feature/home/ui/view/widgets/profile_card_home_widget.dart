@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:haya_care/core/constant/app_image.dart';
 import 'package:haya_care/core/routes/app_routes.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
 import 'package:haya_care/core/widget/custom_elevated_button.dart';
 
-class ProfileCardWidget extends StatelessWidget {
-  const ProfileCardWidget({
+class ProfileCardHomeWidget extends StatelessWidget {
+  const ProfileCardHomeWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Column(
       children: [
         Row(
@@ -32,12 +32,14 @@ class ProfileCardWidget extends StatelessWidget {
                 children: [
                   Text(
                     'Rowan Ahmed',
-                    style: AppStyles.nameStyle,
+                    style: theme.textTheme.titleLarge,
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(
+                    height: 14,
+                  ),
                   Text(
                     'Age: 32',
-                    style: AppStyles.ageStyle,
+                    style: theme.textTheme.titleMedium,
                   ),
                 ],
               ),
@@ -70,11 +72,7 @@ class ProfileCardWidget extends StatelessWidget {
                         ),
                         child: Text(
                           '3',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: theme.textTheme.titleSmall,
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -90,7 +88,6 @@ class ProfileCardWidget extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, AppRoutes.profileRoute);
           },
-          textStyle: AppStyles.buttonTextStyle,
           borderRadius: 8,
           heigth: 40,
         ),

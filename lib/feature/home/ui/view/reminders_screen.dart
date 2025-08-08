@@ -9,8 +9,8 @@ class RemindersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         title: Text('Reminders'),
       ),
@@ -26,14 +26,7 @@ class RemindersScreen extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Appointment Reminders',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                Text('Appointment Reminders', style: theme.titleLarge),
                 SizedBox(height: 8),
                 CustomListTile(
                   icon: Icons.medical_services,
@@ -49,25 +42,12 @@ class RemindersScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 8),
-            Text(
-              'Reminder set 24 hours before ',
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.textPrimary,
-              ),
-            ),
+            Text('Reminder set 24 hours before ', style: theme.titleMedium),
             SizedBox(height: 24),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Medicine Reminders',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+                Text('Medicine Reminders', style: theme.titleLarge),
                 SizedBox(height: 8),
                 CustomListTile(
                   icon: Icons.medical_services,
@@ -83,13 +63,7 @@ class RemindersScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 8),
-            Text(
-              'Reminder set 1 hour before ',
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.textPrimary,
-              ),
-            ),
+            Text('Reminder set 1 hour before ', style: theme.titleMedium),
           ],
         ),
       ),

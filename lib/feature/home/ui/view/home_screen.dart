@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:haya_care/core/constant/app_image.dart';
 import 'package:haya_care/core/routes/app_routes.dart';
 import 'package:haya_care/core/theme/app_color.dart';
-import 'package:haya_care/core/theme/app_style.dart';
-
 import 'package:haya_care/core/widget/custom_appointment_card.dart';
-import 'package:haya_care/feature/home/ui/view/book_appointment_details_screen.dart';
-import 'package:haya_care/feature/home/ui/view/widgets/profile_card_widget.dart';
+import 'package:haya_care/feature/home/ui/view/widgets/profile_card_home_widget.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/custom_quick_action_card.dart';
 import 'package:haya_care/feature/home/ui/view/widgets/welcome_header_widget.dart';
 
@@ -15,8 +11,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
@@ -32,14 +28,15 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Profile Card
-              ProfileCardWidget(),
+              ProfileCardHomeWidget(),
 
               const SizedBox(height: 32),
 
               // Next Appointment Section
               Text(
                 'Next Appointment',
-                style: AppStyles.sectionHeaderStyle,
+                style:
+                    theme.titleLarge!.copyWith(color: AppColors.primaryColor),
               ),
 
               const SizedBox(height: 16),
@@ -62,7 +59,8 @@ class HomeScreen extends StatelessWidget {
 
               Text(
                 'Quick Actions',
-                style: AppStyles.sectionHeaderStyle,
+                style:
+                    theme.titleLarge!.copyWith(color: AppColors.primaryColor),
               ),
 
               const SizedBox(height: 16),
@@ -74,10 +72,10 @@ class HomeScreen extends StatelessWidget {
                     title: 'Book\nAppointment',
                     icon: Icons.calendar_today,
                     onTap: () {
-                      
                       Navigator.pushNamed(
-                          context, AppRoutes.bookAppointmentRoute,
-                          );
+                        context,
+                        AppRoutes.bookAppointmentRoute,
+                      );
                     },
                   ),
                   CustomQuickActionCard(
@@ -103,7 +101,8 @@ class HomeScreen extends StatelessWidget {
                     title: 'Notifications',
                     icon: Icons.notifications_active,
                     onTap: () {
-                      // Navigator.pushNamed(context, AppRoutes.notifications);
+                      Navigator.pushNamed(
+                          context, AppRoutes.notificationsRoute);
                     },
                   ),
                 ],

@@ -8,4 +8,5 @@ class AppRoutes {
   static const bookAppointmentDetailsRoute = '/book-appointment-details';
   static const bookAppointmentRoute = '/book-appointment';
   static const remindersRoute = '/remindersScreen';
+  static const notificationsRoute = '/notificationsScreen';
 }

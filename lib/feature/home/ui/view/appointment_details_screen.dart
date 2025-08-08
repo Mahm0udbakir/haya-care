@@ -10,24 +10,12 @@ class AppointmentDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: const Text(
           'Appointment Details',
-          style: TextStyle(
-            color: AppColors.primaryColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -82,22 +70,11 @@ class AppointmentDetailsScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Dr.Mona Mohammed',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primaryColor,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            'Cardiologist',
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: AppColors.textSecondary,
-                            ),
-                          ),
+                          Text('Dr.Mona Mohammed',
+                              style: theme.titleLarge!
+                                  .copyWith(color: AppColors.primaryColor)),
+                          const SizedBox(height: 16),
+                          Text('Cardiologist', style: theme.titleMedium),
                         ],
                       ),
                     ),
@@ -108,14 +85,7 @@ class AppointmentDetailsScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Appointment Information Section
-              Text(
-                'Appointment Information',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textPrimary,
-                ),
-              ),
+              Text('Appointment Information', style: theme.titleLarge),
               SizedBox(height: 8),
               Container(
                 width: double.infinity,
@@ -133,19 +103,10 @@ class AppointmentDetailsScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Date & time : July 15, 2025 at 10:00 AM',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: AppColors.textSecondary,
-                      ),
+                      style: theme.titleMedium,
                     ),
                     const SizedBox(height: 4),
-                    Text(
-                      'Status: Completed',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: AppColors.textSecondary,
-                      ),
-                    ),
+                    Text('Status: Completed', style: theme.titleMedium),
                   ],
                 ),
               ),
@@ -153,14 +114,7 @@ class AppointmentDetailsScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Appointment Information Section
-              Text(
-                'Visit Summary',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textPrimary,
-                ),
-              ),
+              Text('Visit Summary', style: theme.titleLarge),
               SizedBox(height: 8),
               Container(
                 width: double.infinity,
@@ -174,23 +128,14 @@ class AppointmentDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 child: Text(
+                  textAlign: TextAlign.justify,
                   'Discussed recent chest pains and conducted an EKG. Results were normal, but advised to monitor symptoms and schedule a follow-up if they persist.',
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.textSecondary,
-                  ),
+                  style: theme.titleMedium,
                 ),
               ),
               SizedBox(height: 24),
               // Appointment Information Section
-              Text(
-                'Prescriptions',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textPrimary,
-                ),
-              ),
+              Text('Prescriptions', style: theme.titleLarge),
               SizedBox(height: 8),
               CustomListTile(
                 icon: Icons.medical_services,
