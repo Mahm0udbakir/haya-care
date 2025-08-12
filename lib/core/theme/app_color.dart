@@ -13,4 +13,6 @@ class AppColors {
   static const blackColor = Colors.black;
   static const grayColor = Color(0xffE5E7EB);
   static const grayColor2 = Color(0xff5C5C5C);
+  static const hintTextColor = Color(0xff8A8A8A);
+  static const backgroundcardColor = Color(0xffE8EDF2);
 }

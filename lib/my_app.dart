@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       // darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      initialRoute: AppRoutes.navigationBarRoute,
+      initialRoute: AppRoutes.welcomeRoute,
       onGenerateRoute:
           AppRouter.generateRoute, // Assuming you have a SplashScreen widget
     );
