@@ -102,3 +102,4 @@ class _CustomStepperExampleState extends State<RegistrationScreen> {
     );
   }
 }
+
